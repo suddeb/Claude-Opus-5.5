@@ -17,8 +17,6 @@ response = client.messages.create(
 # Read by block type — the first block is usually 'thinking', not 'text'
 for block in response.content:
     print(block.type)
-    
-    # If response.content[0].text , it will fail, since On 5.5 the first block is usually a thinking block, and that line breaks.
     if block.type == "text":
         print(block.text)
 
